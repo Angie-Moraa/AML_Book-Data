@@ -2,20 +2,17 @@
 # the cost and fairness gates (lab11_mlflow_cicd/gates.py) and the API smoke test.
 name: lab11-model-gates
 
+# Only triggers on lab11_mlflow_cicd/ for now: that folder (requirements.txt, gates.py,
+# test_api.py) isn't in the repo yet. Once it is, add back "lab10_fastapi/**",
+# "Data/CleanedFeaturesFromLoan.csv" and this workflow file to both path lists.
 on:
   push:
     branches: [master]
     paths:
-      - "lab10_fastapi/**"
       - "lab11_mlflow_cicd/**"
-      - "Data/CleanedFeaturesFromLoan.csv"
-      - ".github/workflows/lab11-model-gates.yml"
   pull_request:
     paths:
-      - "lab10_fastapi/**"
       - "lab11_mlflow_cicd/**"
-      - "Data/CleanedFeaturesFromLoan.csv"
-      - ".github/workflows/lab11-model-gates.yml"
   workflow_dispatch:
 
 jobs:

@@ -1,1 +1,0 @@
-print("Jevi is King")
